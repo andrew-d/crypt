@@ -168,6 +168,16 @@ class CryptMechanism: NSObject {
     }
   }
 
+  lazy var encryptor: FDEEncryptor? = {
+    let preference = CFPreferencesCopyAppValue(Preferences.encryptionPublicKey as CFString, "com.grahamgilbert.crypt" as CFString) as? NSString
+
+    guard let hexdata = preference else {
+      return nil
+    }
+
+    return FDEEncryptor(hexdata as String)
+  }()
+
   func needToRestart() -> Bool {
     os_log("Checking to see if we need to restart now because we may not be on APFS", log: CryptMechanism.log, type: .default)
     let task = Process();
@@ -302,11 +312,16 @@ class CryptMechanism: NSObject {
     }
     
     var format : PropertyListSerialization.PropertyListFormat = PropertyListSerialization.PropertyListFormat.xml
-    let outputPlist = try PropertyListSerialization.propertyList(from: outputData,
+    var outputPlist = try PropertyListSerialization.propertyList(from: outputData,
                                                                  options: PropertyListSerialization.MutabilityOptions(), format: &format)
     
     if (format == PropertyListSerialization.PropertyListFormat.xml) {
       if outputPlist is NSDictionary {
+        if let enc = self.encryptor {
+          os_log("Attempting to encrypt FDE properties", log: CryptMechanism.log, type: .default)
+          outputPlist = enc.sealPlist(outputPlist as! NSDictionary)
+        }
+
         os_log("Attempting to write key to: %{public}@", log: CryptMechanism.log, type: .default, String(describing: filepath))
         _ = (outputPlist as! NSDictionary).write(toFile: filepath, atomically: true)
       }

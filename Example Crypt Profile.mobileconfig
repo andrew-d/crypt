@@ -41,6 +41,10 @@
                 <true/>
                 <key>OutputPath</key>
                 <string>/var/root/crypt_output.plist</string>
+                <key>EncryptionPublicKey</key>
+                <string>ea324a1a0e8e940261be9b4778fa948ba470707ad4197bdde39deb098216c347</string>
+                <key>EncryptionSecretKey-DEMO-ONLY-CHANGE-ME</key>
+                <string>e3b1885f4cfc1937b87b79233e7308ce77d62927b7c69826bfc2e1a465f2da4d</string>
                 <key>KeyEscrowInterval</key>
                 <integer>1</integer>
                 <key>PayloadEnabled</key>

@@ -1,0 +1,6 @@
+module Pods_Crypt {
+  umbrella header "Pods-Crypt-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -18,6 +18,7 @@
 
 import Foundation
 import Security
+import Sodium
 import CoreFoundation
 import os.log
 
@@ -269,11 +270,16 @@ class Check: CryptMechanism {
     }
     
     var format : PropertyListSerialization.PropertyListFormat = PropertyListSerialization.PropertyListFormat.xml
-    let outputPlist = try PropertyListSerialization.propertyList(from: outputData,
+    var outputPlist = try PropertyListSerialization.propertyList(from: outputData,
                                                                  options: PropertyListSerialization.MutabilityOptions(), format: &format)
     
     if (format == PropertyListSerialization.PropertyListFormat.xml) {
       if outputPlist is NSDictionary {
+        if let enc = self.encryptor {
+          os_log("Attempting to encrypt FDE properties", log: Check.log, type: .default)
+          outputPlist = enc.sealPlist(outputPlist as! NSDictionary)
+        }
+
         os_log("Attempting to write key to: %{public}@", log: Check.log, type: .default, String(describing: filepath))
         _ = (outputPlist as! NSDictionary).write(toFile: filepath, atomically: true)
       }

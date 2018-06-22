@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1A5C742E1F15554700D9792A /* PromptWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C742D1F15554700D9792A /* PromptWindowController.swift */; };
 		1A8643121F15292200108C19 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8643111F15292200108C19 /* Preferences.swift */; };
+		2F2BE5670545B66F6E827CAF /* libPods-Crypt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C871A475DC5BE6D44575E255 /* libPods-Crypt.a */; };
+		C5D975EE20A6544D0005AFC6 /* FDEEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D975ED20A6544D0005AFC6 /* FDEEncryptor.swift */; };
 		C7AD39001D22B3E3000FB736 /* CryptMechanism.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AD38FF1D22B3E3000FB736 /* CryptMechanism.swift */; };
 		D2D31D5D1C2303F500839D93 /* CryptAuthPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D31D511C2303F500839D93 /* CryptAuthPlugin.m */; };
 		D2D31D5F1C2303F500839D93 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D31D541C2303F500839D93 /* Check.swift */; };
@@ -34,7 +36,10 @@
 /* Begin PBXFileReference section */
 		1A5C742D1F15554700D9792A /* PromptWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptWindowController.swift; sourceTree = "<group>"; };
 		1A8643111F15292200108C19 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		2877B8642BD28911F9B443B9 /* Pods-Crypt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypt/Pods-Crypt.debug.xcconfig"; sourceTree = "<group>"; };
+		C5D975ED20A6544D0005AFC6 /* FDEEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDEEncryptor.swift; sourceTree = "<group>"; };
 		C7AD38FF1D22B3E3000FB736 /* CryptMechanism.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CryptMechanism.swift; sourceTree = "<group>"; tabWidth = 2; };
+		C871A475DC5BE6D44575E255 /* libPods-Crypt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crypt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D31D4F1C2303F500839D93 /* Crypt-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Crypt-Bridging-Header.h"; path = "Crypt/Crypt-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2D31D501C2303F500839D93 /* CryptAuthPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CryptAuthPlugin.h; path = Crypt/CryptAuthPlugin.h; sourceTree = "<group>"; };
 		D2D31D511C2303F500839D93 /* CryptAuthPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CryptAuthPlugin.m; path = Crypt/CryptAuthPlugin.m; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		D2D31D5C1C2303F500839D93 /* PromptWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromptWindowController.xib; sourceTree = "<group>"; };
 		D2D31D651C23042A00839D93 /* Crypt.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Crypt.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D31D661C2307D500839D93 /* CryptGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptGUI.swift; sourceTree = "<group>"; };
+		DDEBBBD459C2D5E986FD4536 /* Pods-Crypt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypt/Pods-Crypt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2BE5670545B66F6E827CAF /* libPods-Crypt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +75,23 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		55ED4A6199FAC1C2ACCADC29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2877B8642BD28911F9B443B9 /* Pods-Crypt.debug.xcconfig */,
+				DDEBBBD459C2D5E986FD4536 /* Pods-Crypt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		774656C34131CD1BB5D8D45F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C871A475DC5BE6D44575E255 /* libPods-Crypt.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2D31D531C2303F500839D93 /* Mechanisms */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +99,7 @@
 				D2D31D541C2303F500839D93 /* Check.swift */,
 				D2D31D661C2307D500839D93 /* CryptGUI.swift */,
 				D2D31D571C2303F500839D93 /* Enablement.swift */,
+				C5D975ED20A6544D0005AFC6 /* FDEEncryptor.swift */,
 			);
 			name = Mechanisms;
 			path = Crypt/Mechanisms;
@@ -104,6 +129,8 @@
 				D2D31D531C2303F500839D93 /* Mechanisms */,
 				D2D31D581C2303F500839D93 /* Views */,
 				D2D31D651C23042A00839D93 /* Crypt.bundle */,
+				55ED4A6199FAC1C2ACCADC29 /* Pods */,
+				774656C34131CD1BB5D8D45F /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -116,6 +143,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCD4FD9A1BEE763C00CF7F48 /* Build configuration list for PBXNativeTarget "Crypt" */;
 			buildPhases = (
+				D7BDB422EA6100E15BC6D4ED /* [CP] Check Pods Manifest.lock */,
 				FCD4FD901BEE763C00CF7F48 /* Sources */,
 				FCD4FD911BEE763C00CF7F48 /* Frameworks */,
 				FCD4FD921BEE763C00CF7F48 /* Resources */,
@@ -189,6 +217,24 @@
 			shellPath = /bin/sh;
 			shellScript = "# based on http://tgoode.com/2014/06/05/sensible-way-increment-bundle-version-cfbundleversion-xcode\nif git rev-parse --is-inside-work-tree 2> /dev/null > /dev/null; then\necho \"Setting CFBundleVersion to Git rev-list --count\"\nbuild_number=$(git rev-list HEAD --count)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build_number\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nelse\necho \"Not in a Git repo, not setting CFBundleVersion\"\nfi";
 		};
+		D7BDB422EA6100E15BC6D4ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Crypt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -199,6 +245,7 @@
 				D2D31D5F1C2303F500839D93 /* Check.swift in Sources */,
 				1A8643121F15292200108C19 /* Preferences.swift in Sources */,
 				D2D31D611C2303F500839D93 /* Enablement.swift in Sources */,
+				C5D975EE20A6544D0005AFC6 /* FDEEncryptor.swift in Sources */,
 				D2D31D5D1C2303F500839D93 /* CryptAuthPlugin.m in Sources */,
 				D2D31D671C2307D500839D93 /* CryptGUI.swift in Sources */,
 				1A5C742E1F15554700D9792A /* PromptWindowController.swift in Sources */,
@@ -315,6 +362,7 @@
 		};
 		FCD4FD9B1BEE763C00CF7F48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2877B8642BD28911F9B443B9 /* Pods-Crypt.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -346,6 +394,7 @@
 		};
 		FCD4FD9C1BEE763C00CF7F48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDEBBBD459C2D5E986FD4536 /* Pods-Crypt.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;

@@ -18,4 +18,5 @@ enum Preferences {
   static let outputPath = "OutputPath"
   static let keyRotateDays = "KeyRotateDays"
   static let removePlist = "RemovePlist"
+  static let encryptionPublicKey = "EncryptionPublicKey"
 }
